@@ -1,24 +1,25 @@
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
+import { actions } from './store';
 
 function App() {
   const counter = useSelector((state)=>state.counter);
   const dispatch = useDispatch();
 
   const handleIncrease = ()=>{
-    dispatch({type: "INC"})
+    dispatch(actions.increament())
     // counter + 1;
   }
 
   const handleDecrease =()=>{
-    dispatch({type: "DEC"})
+    dispatch(actions.decreament())
     // counter - 1;
   }
   const handleAdd10 = () =>{
-    dispatch({type: "ADD10", payload: 10})
+    dispatch(actions.add10(10))
   }
   const handleMinus10 = ()=>{
-    dispatch({type: "MINUS10", payload: 10})
+    dispatch(actions.minus10(10))
   }
   return (
     <div className="App">
