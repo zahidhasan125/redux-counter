@@ -30,13 +30,17 @@ const counterSlice = createSlice({
             state.counter++;
         },
         decreament(state,action){
-            state.counter--;
+            if(state.counter > 0){
+                state.counter--;
+            }
         },
         add10(state,action){
             state.counter += action.payload;
         },
         minus10(state,action){
-            state.counter -= action.payload
+            if(state.counter >= 10){
+                state.counter -= action.payload
+            }
         }
     }
 })
